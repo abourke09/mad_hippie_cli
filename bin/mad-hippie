@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
+require "./lib/mad_hippie"
+require "bundler/setup"
+
 CLI.new.call
