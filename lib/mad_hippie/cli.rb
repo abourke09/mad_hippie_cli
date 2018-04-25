@@ -1,5 +1,9 @@
 class CLI
 
+  def initialize
+    @scraper = Scraper.new 
+  end
+  
   def call
     puts "Welcome to the Mad Hippie CLI!"
     list_products

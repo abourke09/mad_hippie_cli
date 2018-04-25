@@ -1,8 +1,11 @@
 class Scraper
 
+  def initialize
+    @doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
+  end
+
   def self.scrape_urls
-    doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
-    links = doc.css("a.grid-link")
+    links = @doc.css("a.grid-link")
     links.each {|link| Product.new(url = link["href"])}
   end
 
