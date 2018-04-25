@@ -11,7 +11,7 @@ class CLI
     puts "Mad Hippie Skincare Line:"
     @products = Product.all
     @products.each.with_index(1) do |item, i|
-      puts "#{i}. #{item.name}, #{item.price}"
+      puts "#{i}. #{item}"
     end
   end
 
