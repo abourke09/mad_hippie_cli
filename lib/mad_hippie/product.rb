@@ -19,7 +19,13 @@ class Product
   def self.scrape_products
     products = [ ]
 
+    products << self.scrape_mad_hippie
+
     products
   end
 
+  def self.scrape_mad_hippie
+    doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
+    binding.pry
+  end
 end
