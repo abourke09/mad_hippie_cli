@@ -1,8 +1,21 @@
 class Product
-  attr_accessor :name, :price, :url
+  attr_accessor :name=nil, :price=nil, :url=nil, :description=nil
+
+  @@all
+
+  def initialize(name, price, url, description)
+    @name = name
+    @price = price
+    @url = url
+    @description = description
+    @@all << self
+  end
 
   def self.all
     products = [ ]
+
+    @urls = Scraper.scrape_urls
+    @urls.each {|url| products <<}
 
     doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
     text = doc.css("p.grid-link__title")
