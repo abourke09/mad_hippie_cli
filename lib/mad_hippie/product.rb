@@ -25,7 +25,12 @@ class Product
   end
 
   def self.scrape_mad_hippie
+    products = [ ]
+
     doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
-    binding.pry
+    text = doc.css("p.grid-link__title")
+    text.each {|name| products << name.text}
+    products.delete("Mad Hippie")
+    return products
   end
 end
