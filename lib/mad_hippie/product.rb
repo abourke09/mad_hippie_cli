@@ -1,12 +1,7 @@
 class Product
   attr_accessor :name, :price, :url
-  
+
   def self.all
-    puts <<-DOC
-    1. Vitamin C Serum
-    2. Antioxidant Facial Oil
-    3. Exfoliating Serum
-    DOC
 
     item_1 = self.new
     item_1.name = "Vitamin C Serum"
