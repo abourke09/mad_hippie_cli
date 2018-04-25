@@ -1,9 +1,9 @@
 class Product
-  attr_accessor :name=nil, :price=nil, :url=nil, :description=nil
+  attr_accessor :name, :price, :url, :description
 
-  @@all
+  @@all = []
 
-  def initialize(name, price, url, description)
+  def initialize(name=nil, price=nil, url=nil, description=nil)
     @name = name
     @price = price
     @url = url
@@ -12,10 +12,15 @@ class Product
   end
 
   def self.all
+    @@all
+  end
+  
+=begin
+  def self.all
     products = [ ]
 
-    @urls = Scraper.scrape_urls
-    @urls.each {|url| products <<}
+  #  @urls = Scraper.scrape_urls
+  #  @urls.each {|url| products << url}
 
     doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
     text = doc.css("p.grid-link__title")
@@ -35,6 +40,7 @@ class Product
 
   #  [item_1, item_2]
   end
+=end
 
   def self.scrape_products
     products = [ ]
