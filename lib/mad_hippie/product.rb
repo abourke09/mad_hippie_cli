@@ -14,7 +14,7 @@ class Product
   def self.all
     @@all
   end
-  
+
 =begin
   def self.all
     products = [ ]
@@ -42,7 +42,7 @@ class Product
   end
 =end
 
-  def self.scrape_products
+  def scrape_products
     products = [ ]
 
     products << self.scrape_mad_hippie
@@ -50,7 +50,7 @@ class Product
     products
   end
 
-  def self.scrape_mad_hippie
+  def scrape_mad_hippie
     products = [ ]
 
     doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
