@@ -16,4 +16,10 @@ class Product
     [item_1, item_2]
   end
 
+  def self.scrape_products
+    products = [ ]
+
+    products
+  end
+
 end
