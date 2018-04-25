@@ -1,6 +1,7 @@
 #environment file
 require "nokogiri"
 require "pry"
+require "open-uri"
 
 require_relative "./mad_hippie//version"
 require_relative "./mad_hippie/cli"
