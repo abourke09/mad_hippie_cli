@@ -1,5 +1,5 @@
 #environment file
-
+require "nokogiri"
 require "pry"
 
 require_relative "./mad_hippie//version"
