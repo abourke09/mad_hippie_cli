@@ -11,7 +11,7 @@ program
 
 A command line interface Mad Hippie skincare products.
 
-User types mad_hippie
+User types bin/mad-hippie
 
 Show a list of products
 

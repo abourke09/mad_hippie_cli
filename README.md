@@ -1,34 +1,9 @@
 # MadHippie
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mad_hippie`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'mad_hippie'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mad_hippie
+Welcome to the Mad Hippie CLI gem. Mad Hippie is a natural skincare company that offers 13 products for sale through their website. This CLI will help you to learn more about the product line by listing each item and making the product details available to view.  
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Once you CD into mad_hippie_cli, run bin/mad-hippie in the command line to start the program.
 
 ## Contributing
 
@@ -41,4 +16,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the MadHippie project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'abourke09'/mad_hippie/blob/master/CODE_OF_CONDUCT.md).
+
 # mad_hippie_cli
