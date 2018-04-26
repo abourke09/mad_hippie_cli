@@ -2,6 +2,7 @@ class CLI
 
   def initialize
     @scraper = Scraper.new
+    @scraper.scrape_urls
     @products = @scraper.scrape_products
   end
 
@@ -13,16 +14,10 @@ class CLI
     goodbye
   end
 
-#Q: How do I scrape my Descriptions better over all 13 products?
-#Q: How do I upload my screenrecording in order to link it to the Learn Curriculum page?
-#Q: Separation of concerns, clean up, ect
-#Q: Is there a better way to add line spacing, other than 'puts "" ' ?
-#Q: How do I indent the list of products? I tried using .indent(#) on the string but it didn't work.
-
   def list_products
     puts "Mad Hippie Skincare Line:"
     @products.each.with_index(1) do |item, i|
-      puts "#{i}. #{item.name}"
+      puts "     #{i}. #{item.name}"
     end
   end
 
