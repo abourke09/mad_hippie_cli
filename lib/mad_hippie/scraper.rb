@@ -1,15 +1,17 @@
 class Scraper
+  attr_accessor :urls
 
   def initialize
     @doc = Nokogiri::HTML(open("https://www.madhippie.com/collections/all-products"))
+    @urls = []
+  end
+
+  def scrape_urls
+    links = @doc.css("a.grid-link")
+    links.each {|link| @urls << link["href"]}
   end
 
   def scrape_products
-    @urls = []
-
-    links = @doc.css("a.grid-link")
-    links.each {|link| @urls << link["href"]}
-
     @urls.each do |url|
       full_link = "https://www.madhippie.com"+"#{url}"
       @product_page = Nokogiri::HTML(open(full_link))
@@ -23,16 +25,5 @@ class Scraper
     end
     Product.all
   end
-
-
-#
-#    def self.urls
-#      @urls
-#    end
-#
-#    def scrape_urls
-#      links = @doc.css("a.grid-link")
-#      links.each {|link| @urls << link["href"]}
-#    end
-
+  
 end
