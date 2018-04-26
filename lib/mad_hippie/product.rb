@@ -3,7 +3,7 @@ class Product
 
   @@all = []
 
-  def initialize(name=nil, price=nil, url=nil, description=nil)
+  def initialize(name, price, url, description)
     @name = name
     @price = price
     @url = url
@@ -40,7 +40,6 @@ class Product
 
   #  [item_1, item_2]
   end
-=end
 
   def scrape_products
     products = [ ]
@@ -60,5 +59,5 @@ class Product
 
     return products
   end
-
+=end
 end

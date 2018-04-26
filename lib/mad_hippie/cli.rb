@@ -1,9 +1,10 @@
 class CLI
 
   def initialize
-    @scraper = Scraper.new 
+    @scraper = Scraper.new
+    @products = @scraper.scrape_products
   end
-  
+
   def call
     puts "Welcome to the Mad Hippie CLI!"
     list_products
@@ -13,9 +14,8 @@ class CLI
 
   def list_products
     puts "Mad Hippie Skincare Line:"
-    @products = Product.all
     @products.each.with_index(1) do |item, i|
-      puts "#{i}. #{item}"
+      puts "#{i}. #{item.name}"
     end
   end
 
@@ -26,6 +26,7 @@ class CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
+        binding.pry
         puts @products[input.to_i - 1]
       elsif input == "list"
         list_products
