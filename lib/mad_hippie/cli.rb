@@ -30,7 +30,7 @@ class CLI
       puts ""
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i <= Product.all.count
         x = input.to_i - 1
         puts "Product: #{@products[x].name}"
         puts "Price: #{@products[x].price}"

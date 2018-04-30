@@ -25,5 +25,5 @@ class Scraper
     end
     Product.all
   end
-  
+
 end

@@ -4,6 +4,7 @@ class Product
   @@all = []
 
   def initialize(name, price, url, description)
+    # attr_hash.each {|k,v| self.send("#{k}=", v)}
     @name = name
     @price = price
     @url = url
