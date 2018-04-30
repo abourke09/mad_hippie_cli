@@ -14,12 +14,12 @@ class MadHippie::Scraper
   def scrape_products
     @urls.each do |url|
       full_link = "https://www.madhippie.com"+"#{url}"
-      @product_page = Nokogiri::HTML(open(full_link))
+      product_page = Nokogiri::HTML(open(full_link))
 
-      name = @product_page.css("h1").text
-      price = @product_page.css("#ProductPrice").text.strip
+      name = product_page.css("h1").text
+      price = product_page.css("#ProductPrice").text.strip
       url = full_link
-      description = @product_page.css("p strong").text
+      description = product_page.css("p strong").text
 
       MadHippie::Product.new(name, price, url, description)
     end
