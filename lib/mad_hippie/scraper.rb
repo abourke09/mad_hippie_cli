@@ -1,4 +1,4 @@
-class Scraper
+class MadHippie::Scraper
   attr_accessor :urls
 
   def initialize

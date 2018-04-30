@@ -1,4 +1,4 @@
-class Product
+class MadHippie::Product
   attr_accessor :name, :price, :url, :description
 
   @@all = []

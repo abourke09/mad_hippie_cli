@@ -1,4 +1,4 @@
-class CLI
+class MadHippie::CLI
 
   def initialize
     @scraper = Scraper.new
