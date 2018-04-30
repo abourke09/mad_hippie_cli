@@ -4,7 +4,6 @@ class MadHippie::CLI
     @scraper = MadHippie::Scraper.new
     @scraper.scrape_urls
     @scraper.scrape_products
-    #MadHippie::Product.all ^replaces line 6 @products
   end
 
   def call
