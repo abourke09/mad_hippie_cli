@@ -23,7 +23,6 @@ class MadHippie::Scraper
 
       MadHippie::Product.new(name, price, url, description)
     end
-    MadHippie::Product.all
   end
 
 end

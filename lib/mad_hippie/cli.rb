@@ -3,7 +3,8 @@ class MadHippie::CLI
   def initialize
     @scraper = MadHippie::Scraper.new
     @scraper.scrape_urls
-    @products = @scraper.scrape_products
+    @scraper.scrape_products
+    #MadHippie::Product.all ^replaces line 6 @products
   end
 
   def call
@@ -16,7 +17,7 @@ class MadHippie::CLI
 
   def list_products
     puts "Mad Hippie Skincare Line:"
-    @products.each.with_index(1) do |item, i|
+    MadHippie::Product.all.each.with_index(1) do |item, i|
       puts "     #{i}. #{item.name}"
     end
   end
@@ -32,9 +33,9 @@ class MadHippie::CLI
 
       if input.to_i > 0 && input.to_i <= MadHippie::Product.all.count
         x = input.to_i - 1
-        puts "Product: #{@products[x].name}"
-        puts "Price: #{@products[x].price}"
-        puts "Description: #{@products[x].description}"
+        puts "Product: #{MadHippie::Product.all[x].name}"
+        puts "Price: #{MadHippie::Product.all[x].price}"
+        puts "Description: #{MadHippie::Product.all[x].description}"
         puts ""
       elsif input == "list"
         list_products
