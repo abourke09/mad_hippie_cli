@@ -1,7 +1,7 @@
 class MadHippie::CLI
 
   def initialize
-    @scraper = Scraper.new
+    @scraper = MadHippie::Scraper.new
     @scraper.scrape_urls
     @products = @scraper.scrape_products
   end
@@ -30,7 +30,7 @@ class MadHippie::CLI
       puts ""
       input = gets.strip.downcase
 
-      if input.to_i > 0 && input.to_i <= Product.all.count
+      if input.to_i > 0 && input.to_i <= MadHippie::Product.all.count
         x = input.to_i - 1
         puts "Product: #{@products[x].name}"
         puts "Price: #{@products[x].price}"

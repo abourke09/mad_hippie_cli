@@ -21,9 +21,9 @@ class MadHippie::Scraper
       url = full_link
       description = @product_page.css("p strong").text
 
-      Product.new(name, price, url, description)
+      MadHippie::Product.new(name, price, url, description)
     end
-    Product.all
+    MadHippie::Product.all
   end
 
 end

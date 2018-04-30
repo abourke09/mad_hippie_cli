@@ -3,4 +3,4 @@
 require "./lib/mad_hippie"
 require "bundler/setup"
 
-CLI.new.call
+MadHippie::CLI.new.call
